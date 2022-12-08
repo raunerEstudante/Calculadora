@@ -9,7 +9,9 @@ function calc(numero1, numero2,operacao) {
 	var operador = document.getElementById(operacao).options[document.getElementById(operacao).selectedIndex].value;
 	var n1 = document.getElementById(numero1).value;
 	var n2 = document.getElementById(numero2).value;
-	function responder(){document.getElementById('saida').innerHTML=resposta;};
+	function responder(){
+		document.getElementById('titulo').innerHTML="Sua Resposta";
+		document.getElementById('saida').innerHTML=resposta;};
 	var exprecao = n1+operador+n2;
 	if (operador == "+") {
 		//document.getElementById('saida').innerHTML = `A soma de ${n1} e ${n2} resulta em ${eval(exprecao)}`;

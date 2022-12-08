@@ -1,3 +1,4 @@
+<!--Vesão 2.0 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,24 +9,22 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="calc.js" type="text/javascript" charset="utf-8" async defer></script>
 </head>
-<body>
-	<main>
-    </main>
-	<section>
-		<div class="conteiner">
-			<h1>Calculadora</h1>
+<body class="">
+	<section class="conteiner">
+		<h1>Calculadora Do Rauner</h1>
+		<div class="box">
 			<form action="">
 				<ul>
 					<li>
-						<label for="valor1">Primeiro Valor</label>
-						<input type="number" id="priValor">
+						<label for="valor1">Primeiro Valor<br></label>
+						<input type="number" id="priValor" required>
 					</li>
 					<li>
-						<label for="valor2">Segundo Valor</label>
-						<input type="number" id="segValor">
+						<label for="valor2">Segundo Valor<br></label>
+						<input type="number" id="segValor" required>
 					</li>
 					<li>
-						<label for="operacao">Escolhao a Operação!</label>
+						<label for="operacao">Escolhao a Operação!<br></label>
 						<select id="operacao" >
 							<option value="+"> Adição (+)</option>
 							<option value="-"> Subtração (-)</option>
@@ -40,7 +39,10 @@
 				<input type="button" onclick="limpar('priValor','segValor')" value="Limpar">
 			</form>
 		</div>
-		<div>
+	</section>
+	<section class="conteiner">
+		<div class="resposta">
+			<h5 id="titulo">Estou Caculando...</h5>
 			<p id="saida"></p>
 		</div>
 	</section>
