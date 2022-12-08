@@ -1,0 +1,12 @@
+h1{
+    font-family: Arial;
+    font-size: 4em;
+}
+
+.conteiner{
+    margin: 0 auto;
+    display: flex;
+    height: 22em;
+    width: 24em;
+    text-align: center;
+}
