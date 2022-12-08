@@ -1,81 +1,38 @@
 
-/*
-	Métodos Nativos
+function limpar(idP,idS){
+	document.getElementById(idP).value="";
+	document.getElementById(idS).value="";
+}
+	
 
- Number() – para converter valores em números;
- Prompt() – para registrar entradas de usuário;
- Alert() – para mostrar mensagem ao usuário;
- Template Strings – para usar strings junto com expressões;
-*/
-
-function calc() {
-	 const operacao = Number(prompt("Escolha o número da operação:\n 1 - Soma (+)\n 2 - Subtração(-)\n 3 - Multiplicação(*)\n 4 - Divisão Real(/)\n 5 - Divisão Inteira(%)\n 6 - Potenciação(**)"));
-
-	if(!operacao || operacao >= 7){
-		alert("Valor invalido!")
-		calc()
-	} else{
-		 let n1 = Number(prompt("Insira o primeiro valor:"));
-		 let n2 = Number(prompt("Insira o segundo valor:"));
-		 let resultado;
-
-		 if (!n1 || !n2) {
-		 	alert("Favor insira números!")
-		 	calc();
-		 } else{
-			function soma(){
-				resultado = n1 + n2;
-				alert(`${n1} + ${n2} = ${resultado}`);
-			};
-			function subtracao(){
-				resultado = n1 - n2;
-				alert(`${n1} - ${n2} = ${resultado}`);
-			};
-			function multiplicacao(){
-				resultado = n1 * n2;
-				alert(`${n1} * ${n2} = ${resultado}`);
-			};
-			function divisaoReal(){
-				resultado = n1 / n2;
-				alert(`${n1} / ${n2} = ${resultado}`);
-			};
-			function divisaoInteira(){
-				resultado = n1 % n2;
-				alert(`O resto da divisão de: ${n1} e ${n2} = ${resultado}`);
-			};
-			function potenciacao(){
-				resultado = n1 ** n2;
-				alert(`${n1} ^ ${n2} = ${resultado}`);
-			};
-			function novaOpcao(){
-				let opcao = Number(prompt("Repetir operação?\n 1 - SIM\n 2 - NÃO"))
-				if (opcao == 1) {
-					calc()
-				} else if(opcao == 2){
-					alert("Volte sempre")
-				} else{
-					alert("Insira 1 ou 2!")
-				};
-			};
-
-			if (operacao == "1") {
-				soma();
-			} else if (operacao == "2") {
-				subtracao();
-			} else if (operacao == "3") {
-				multiplicacao();
-			} else if (operacao == "4") {
-				divisaoReal();
-			} else if (operacao == "5") {
-				divisaoInteira();
-			} else if (operacao == "6") {
-				potenciacao();
-			};
-		 };
-
-		novaOpcao();
+function calc(numero1, numero2,operacao) {
+	var operador = document.getElementById(operacao).options[document.getElementById(operacao).selectedIndex].value;
+	var n1 = document.getElementById(numero1).value;
+	var n2 = document.getElementById(numero2).value;
+	function responder(){document.getElementById('saida').innerHTML=resposta;};
+	var exprecao = n1+operador+n2;
+	if (operador == "+") {
+		//document.getElementById('saida').innerHTML = `A soma de ${n1} e ${n2} resulta em ${eval(exprecao)}`;
+		resposta = `A soma de <strong>${n1}</strong> e <strong>${n2}</strong> resulta em <strong>${eval(exprecao)}</strong>`;
+		responder();
+	} else if (operador == "-") {
+		resposta = `A diferença entre <strong>${n1}</strong> e <strong>${n2}</strong> resulta em <strong>${eval(exprecao)}</strong>`;
+		responder();
+	} else if (operador == "*") {
+		resposta = `O produto de <strong>${n1}</strong> por <strong>${n2}</strong> resulta em <strong>${eval(exprecao)}</strong>`;
+		responder();
+	} else if (operador == "/") {
+		resposta = `O quociente de <strong>${n1}</strong> dividido por <strong>${n2}</strong> resulta em <strong>${eval(exprecao)}</strong>`;
+		responder();
+	} else if (operador == "%") {
+		resposta = `O resto de <strong>${n1}</strong> por <strong>${n2}</strong> resulta em <strong>${eval(exprecao)}</strong>`;
+		responder();
+	} else if (operador == "**") {
+		resposta = `A exponenciação de <strong>${n1}</strong> a <strong>${n2}</strong> resulta em <strong>${eval(exprecao)}</strong>`;
+		responder();
 	};
 };
 
-calc();
+
+
 
